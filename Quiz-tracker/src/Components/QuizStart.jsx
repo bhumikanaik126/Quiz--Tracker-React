@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { AddQuiz } from "./AddQuiz";
+import { DeleteQuiz } from "./DeleteQuiz";
 
 export const QuizStart = () => {
-  const [questions, initialiseQuestions] = useState([
+  const [questions, setQuestions] = useState([
     {
       question: "what is the capital of France?",
       options: ["New York", "London", "Paris", "Dublin"],
@@ -80,6 +82,11 @@ export const QuizStart = () => {
             >
               Restart
             </button>
+            
+            <AddQuiz questions={questions} setQuestions={setQuestions}/>
+            <br /> <br />
+            <DeleteQuiz questions={questions} setQuestions={setQuestions}/>
+               
           </div>
         </>
       )}
